@@ -16,10 +16,10 @@ composer require magepsycho/magento2-custom-shipping:dev-master
 
 
 **Using Zip**
-* Download the [Zip File](https://github.com/MagePsycho/magento2-custom-shipping)
+* Download the [Zip File](https://github.com/MagePsycho/magento2-custom-shipping/archive/master.zip)
 * Extract & upload the files to `/path/to/magento2/app/code/MagePsycho/Customshipping/`
 
-After installation, enable the extension by running following commands (again from root of Magento2 installation):
+After installation by either means, enable the extension by running following commands (again from root of Magento2 installation):
 ```
 php bin/magento module:enable MagePsycho_Customshipping --clear-static-content
 php bin/magento setup:upgrade
