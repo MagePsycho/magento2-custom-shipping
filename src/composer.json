@@ -10,7 +10,7 @@
   "extra": {
     "map": [
       [
-        "src/*",
+        "*",
         "MagePsycho/Customshipping"
       ]
     ]
