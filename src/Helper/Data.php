@@ -26,15 +26,13 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
 	/**
 	 * @param \Magento\Framework\App\Helper\Context $context
-	 * @param \Psr\Log\LoggerInterface $logger
 	 * @param \Magento\Framework\Module\ModuleListInterface $moduleList
 	 */
 	public function __construct(
 		\Magento\Framework\App\Helper\Context $context,
-		\Psr\Log\LoggerInterface $logger,
 		\Magento\Framework\Module\ModuleListInterface $moduleList
 	) {
-		$this->_logger                  = $logger;
+		$this->_logger                  = $context->getLogger();
 		$this->_moduleList              = $moduleList;
 
 		parent::__construct($context);
@@ -83,5 +81,4 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 			$this->_logger->addDebug($message);
 		}
 	}
-
 }

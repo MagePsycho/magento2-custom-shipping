@@ -8,7 +8,7 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <magepsycho_customshipping>
             <general>
@@ -17,7 +17,7 @@
         </magepsycho_customshipping>
 
         <carriers>
-            <magepsycho_customshipping>
+            <mpcustomshipping>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
                 <price>0</price>
@@ -25,9 +25,8 @@
                 <name>Fixed</name>
                 <title>Custom Shipping</title>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
-            </magepsycho_customshipping>
+            </mpcustomshipping>
         </carriers>
-
 
     </default>
 </config>

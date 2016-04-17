@@ -2,7 +2,18 @@
 
 namespace MagePsycho\Customshipping\Model\Carrier;
 
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\DataObject;
+use Magento\Shipping\Model\Carrier\AbstractCarrier;
+use Magento\Shipping\Model\Carrier\CarrierInterface;
+use Magento\Shipping\Model\Config;
+use Magento\Shipping\Model\Rate\ResultFactory;
+use Magento\Store\Model\ScopeInterface;
+use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
+use Magento\Quote\Model\Quote\Address\RateResult\Method;
+use Magento\Quote\Model\Quote\Address\RateResult\MethodFactory;
 use Magento\Quote\Model\Quote\Address\RateRequest;
+use Psr\Log\LoggerInterface;
 
 /**
  * @category   MagePsycho
@@ -11,72 +22,99 @@ use Magento\Quote\Model\Quote\Address\RateRequest;
  * @website    http://www.magepsycho.com
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Customshipping extends \Magento\Shipping\Model\Carrier\AbstractCarrier implements
-	\Magento\Shipping\Model\Carrier\CarrierInterface
+class Customshipping extends AbstractCarrier implements CarrierInterface
 {
 	/**
+	 * Carrier's code
+	 *
 	 * @var string
 	 */
-	protected $_code = 'magepsycho_customshipping';
+	protected $_code = 'mpcustomshipping';
 
 	/**
+	 * Whether this carrier has fixed rates calculation
+	 *
 	 * @var bool
 	 */
 	protected $_isFixed = true;
 
 	/**
-	 * @var \Magento\Shipping\Model\Rate\ResultFactory
+	 * @var ResultFactory
 	 */
-	protected $_rateResultFactory;
+	protected $rateResultFactory;
 
 	/**
-	 * @var \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory
+	 * @var MethodFactory
 	 */
-	protected $_rateMethodFactory;
+	protected $rateMethodFactory;
 
 	/**
-	 * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
-	 * @param \Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory
-	 * @param \Psr\Log\LoggerInterface $logger
-	 * @param \Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory
-	 * @param \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory
+	 * @param ScopeConfigInterface $scopeConfig
+	 * @param ErrorFactory $rateErrorFactory
+	 * @param LoggerInterface $logger
+	 * @param ResultFactory $rateResultFactory
+	 * @param MethodFactory $rateMethodFactory
 	 * @param array $data
 	 */
 	public function __construct(
-		\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-		\Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory $rateErrorFactory,
-		\Psr\Log\LoggerInterface $logger,
-		\Magento\Shipping\Model\Rate\ResultFactory $rateResultFactory,
-		\Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
-		array $data = []
+			ScopeConfigInterface $scopeConfig,
+			ErrorFactory $rateErrorFactory,
+			LoggerInterface $logger,
+			ResultFactory $rateResultFactory,
+			MethodFactory $rateMethodFactory,
+			array $data = []
 	) {
-		$this->_rateResultFactory = $rateResultFactory;
-		$this->_rateMethodFactory = $rateMethodFactory;
+		$this->rateResultFactory = $rateResultFactory;
+		$this->rateMethodFactory = $rateMethodFactory;
 		parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
 	}
 
 	/**
+	 * Generates list of allowed carrier`s shipping methods
+	 * Displays on cart price rules page
+	 *
+	 * @return array
+	 * @api
+	 */
+	public function getAllowedMethods()
+	{
+		return [$this->getCarrierCode() => __($this->getConfigData('name'))];
+	}
+
+	/**
+	 * Collect and get rates for storefront
+	 *
+	 * @SuppressWarnings(PHPMD.UnusedFormalParameter)
 	 * @param RateRequest $request
-	 * @return \Magento\Shipping\Model\Rate\Result
-	 * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+	 * @return DataObject|bool|null
+	 * @api
 	 */
 	public function collectRates(RateRequest $request)
 	{
-		if (!$this->getConfigFlag('active')) {
+		/**
+		 * Make sure that Shipping method is enabled
+		 */
+		if (!$this->isActive()) {
 			return false;
 		}
 
 		/** @var \Magento\Shipping\Model\Rate\Result $result */
-		$result = $this->_rateResultFactory->create();
+		$result = $this->rateResultFactory->create();
 
 		$shippingPrice = $this->getConfigData('price');
 
-		$method = $this->_rateMethodFactory->create();
+		$method = $this->rateMethodFactory->create();
 
-		$method->setCarrier($this->_code);
+		/**
+		 * Set carrier's method data
+		 */
+		$method->setCarrier($this->getCarrierCode());
 		$method->setCarrierTitle($this->getConfigData('title'));
 
-		$method->setMethod($this->_code);
+		/**
+		 * Displayed as shipping method under Carrier
+		 */
+		$method->setMethod($this->getCarrierCode());
 		$method->setMethodTitle($this->getConfigData('name'));
 
 		$method->setPrice($shippingPrice);
@@ -87,13 +125,4 @@ class Customshipping extends \Magento\Shipping\Model\Carrier\AbstractCarrier imp
 		return $result;
 	}
 
-	/**
-	 * Get allowed shipping methods
-	 *
-	 * @return array
-	 */
-	public function getAllowedMethods()
-	{
-		return [$this->_code => $this->getConfigData('name')];
-	}
 }
