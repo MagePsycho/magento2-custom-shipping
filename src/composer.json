@@ -2,17 +2,18 @@
   "name": "magepsycho/magento2-custom-shipping",
   "description": "Custom Shipping",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "license": [
+    "OSL-3.0"
+  ],
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0",
-    "magento/magento-composer-installer": "*"
+    "magento/framework": "~100.0.4"
   },
-  "extra": {
-    "map": [
-      [
-        "*",
-        "MagePsycho/Customshipping"
-      ]
-    ]
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "MagePsycho\\Customshipping\\": ""
+    }
   }
 }
