@@ -14,14 +14,6 @@ composer config repositories.magesycho-magento2-custom-shipping git git@github.c
 composer require magepsycho/magento2-custom-shipping:dev-master
 ```
 
-**Using Modman**
-
-Run the following following command:
-```
-modman init
-modman clone git@github.com:MagePsycho/magento2-custom-shipping.git
-```
-
 **Using Zip**
 * Download the [Zip File](https://github.com/MagePsycho/magento2-custom-shipping/archive/master.zip)
 * Extract & upload the files to `/path/to/magento2/app/code/MagePsycho/Customshipping/`
