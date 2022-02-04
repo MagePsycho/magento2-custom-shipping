@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[![Packagist Version](https://img.shields.io/packagist/v/magepsycho/magento2-custom-shipping?style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping)
+[![Packagist Version](https://img.shields.io/github/v/tag/MagePsycho/magento2-custom-shipping?sort=semver&label=packagist&style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/magepsycho/magento2-custom-shipping.svg?style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping/stats)
 ![Supported Magento Versions](https://img.shields.io/badge/magento-%202.3_|_2.4-brightgreen.svg?logo=magento&longCache=true&style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-green?color=%23234&style=for-the-badge)
