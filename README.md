@@ -62,7 +62,8 @@ Screenshots
 ## Authors
 
 - Raj KB [Maintainer] [![Twitter Follow](https://img.shields.io/twitter/follow/rajkbnp.svg?style=social)](https://twitter.com/rajkbnp)
-- `{{this could be you}}` (see "Contribution" section)
+- [Daniel](https://github.com/dh1984) [Contributor]
+- `{{This could be YOU}}` (see "Contribution" section)
 
 ## Need Support?
 If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/MagePsycho/magento2-custom-shipping/issues).
