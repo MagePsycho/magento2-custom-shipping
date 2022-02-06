@@ -2,9 +2,9 @@
 <!--
 /**
  * @category   MagePsycho
- * @package    MagePsycho_Customshipping
+ * @package    MagePsycho_CustomShipping
  * @author     magepsycho@gmail.com
- * @website    http://www.magepsycho.com
+ * @website    https://www.magepsycho.com
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 -->
@@ -15,18 +15,16 @@
                 <debug>0</debug>
             </general>
         </magepsycho_customshipping>
-
         <carriers>
             <mpcustomshipping>
                 <active>0</active>
                 <sallowspecific>0</sallowspecific>
                 <price>0</price>
-                <model>MagePsycho\Customshipping\Model\Carrier\Customshipping</model>
+                <model>MagePsycho\CustomShipping\Model\Carrier\CustomShipping</model>
                 <name>Fixed</name>
                 <title>Custom Shipping</title>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </mpcustomshipping>
         </carriers>
-
     </default>
 </config>

@@ -1,11 +1,12 @@
 <?php
-namespace MagePsycho\Customshipping\Helper;
+
+namespace MagePsycho\CustomShipping\Helper;
 
 /**
  * @category   MagePsycho
- * @package    MagePsycho_Customshipping
+ * @package    MagePsycho_CustomShipping
  * @author     magepsycho@gmail.com
- * @website    http://www.magepsycho.com
+ * @website    https://www.magepsycho.com
  */
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -60,7 +61,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function getExtensionVersion()
     {
-        $moduleCode = 'MagePsycho_Customshipping';
+        $moduleCode = 'MagePsycho_CustomShipping';
         $moduleInfo = $this->_moduleList->getOne($moduleCode);
         return $moduleInfo['setup_version'];
     }

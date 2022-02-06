@@ -1,35 +1,35 @@
 <?php
-namespace MagePsycho\Customshipping\Block\System\Config\Form\Field;
+
+namespace MagePsycho\CustomShipping\Block\System\Config\Form\Field;
 
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
 /**
  * @category   MagePsycho
- * @package    MagePsycho_Customshipping
+ * @package    MagePsycho_CustomShipping
  * @author     magepsycho@gmail.com
- * @website    http://www.magepsycho.com
+ * @website    https://www.magepsycho.com
  */
 class Version extends \Magento\Config\Block\System\Config\Form\Field
 {
-    const EXTENSION_URL = 'http://www.magepsycho.com/extensions.html';
+    const EXTENSION_URL = 'https://www.magepsycho.com/magento-2-custom-shipping.html';
 
     /**
-     * @var \MagePsycho\Customshipping\Helper\Data $helper
+     * @var \MagePsycho\CustomShipping\Helper\Data $helper
      */
     protected $_helper;
 
     /**
      * @param \Magento\Backend\Block\Template\Context $context
-     * @param \MagePsycho\Customshipping\Helper\Data $helper
+     * @param \MagePsycho\CustomShipping\Helper\Data $helper
      */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
-        \MagePsycho\Customshipping\Helper\Data $helper
+        \MagePsycho\CustomShipping\Helper\Data $helper
     ) {
         $this->_helper = $helper;
         parent::__construct($context);
     }
-
 
     /**
      * @param AbstractElement $element

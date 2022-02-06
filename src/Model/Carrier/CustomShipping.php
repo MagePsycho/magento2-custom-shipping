@@ -1,14 +1,12 @@
 <?php
 
-namespace MagePsycho\Customshipping\Model\Carrier;
+namespace MagePsycho\CustomShipping\Model\Carrier;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\DataObject;
 use Magento\Shipping\Model\Carrier\AbstractCarrier;
 use Magento\Shipping\Model\Carrier\CarrierInterface;
-use Magento\Shipping\Model\Config;
 use Magento\Shipping\Model\Rate\ResultFactory;
-use Magento\Store\Model\ScopeInterface;
 use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
 use Magento\Quote\Model\Quote\Address\RateResult\Method;
 use Magento\Quote\Model\Quote\Address\RateResult\MethodFactory;
@@ -17,11 +15,11 @@ use Psr\Log\LoggerInterface;
 
 /**
  * @category   MagePsycho
- * @package    MagePsycho_Customshipping
+ * @package    MagePsycho_CustomShipping
  * @author     magepsycho@gmail.com
- * @website    http://www.magepsycho.com
+ * @website    https://www.magepsycho.com
  */
-class Customshipping extends AbstractCarrier implements CarrierInterface
+class CustomShipping extends AbstractCarrier implements CarrierInterface
 {
     /**
      * Carrier's code
@@ -47,14 +45,6 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
      */
     protected $_rateMethodFactory;
 
-    /**
-     * @param ScopeConfigInterface $scopeConfig
-     * @param ErrorFactory $rateErrorFactory
-     * @param LoggerInterface $logger
-     * @param ResultFactory $rateResultFactory
-     * @param MethodFactory $rateMethodFactory
-     * @param array $data
-     */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
         ErrorFactory $rateErrorFactory,
@@ -91,9 +81,9 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
     public function collectRates(RateRequest $request)
     {
         /**
-         * Make sure that Shipping method is enabled
+         * Make sure that shipping method is enabled
          */
-        if (!$this->isActive()) {
+        if (! $this->isActive()) {
             return false;
         }
 
@@ -102,6 +92,7 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
 
         $shippingPrice = $this->getConfigData('price');
 
+        /** @var Method $method */
         $method = $this->_rateMethodFactory->create();
 
         /**
@@ -123,5 +114,4 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
 
         return $result;
     }
-
 }

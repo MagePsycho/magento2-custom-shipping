@@ -2,15 +2,14 @@
 <!--
 /**
  * @category   MagePsycho
- * @package    MagePsycho_Customshipping
+ * @package    MagePsycho_CustomShipping
  * @author     magepsycho@gmail.com
- * @website    http://www.magepsycho.com
+ * @website    https://www.magepsycho.com
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-
         <tab id="magepsycho" translate="label" sortOrder="200">
             <label>MagePsycho</label>
         </tab>
@@ -22,17 +21,12 @@
                 <label>General Settings</label>
                 <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Version</label>
-                    <frontend_model>MagePsycho\Customshipping\Block\System\Config\Form\Field\Version</frontend_model>
+                    <frontend_model>MagePsycho\CustomShipping\Block\System\Config\Form\Field\Version</frontend_model>
                 </field>
-                <!--<field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Enabled</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>-->
                 <field id="debug" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Debug Mode</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-
             </group>
         </section>
         <section id="carriers" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -40,7 +34,7 @@
                 <label>Custom Shipping</label>
                 <field id="version" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Version</label>
-                    <frontend_model>MagePsycho\Customshipping\Block\System\Config\Form\Field\Version</frontend_model>
+                    <frontend_model>MagePsycho\CustomShipping\Block\System\Config\Form\Field\Version</frontend_model>
                 </field>
                 <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Enabled</label>
@@ -79,7 +73,5 @@
                 </field>
             </group>
         </section>
-
-
     </system>
 </config>
