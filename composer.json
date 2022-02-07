@@ -3,7 +3,7 @@
   "description": "Magento 2 Custom Shipping",
   "keywords": ["magento", "magento2 extension", "magento 2 extension", "extension", "module", "magento2 module", "magento 2 module", "shipping", "shipment", "method"],
   "type": "magento2-module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "authors": [
     {
       "name": "Raj KB",
