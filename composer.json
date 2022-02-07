@@ -1,13 +1,15 @@
 {
   "name": "magepsycho/magento2-custom-shipping",
-  "description": "Custom Shipping for Magento 2",
+  "description": "Magento 2 Custom Shipping",
+  "keywords": ["magento", "magento2 extension", "magento 2 extension", "extension", "module", "magento2 module", "magento 2 module", "shipping", "shipment", "method"],
   "type": "magento2-module",
   "version": "1.0.3",
   "authors": [
     {
       "name": "Raj KB",
       "email": "magepsycho@gmail.com",
-      "homepage": "https://www.magepsycho.com"
+      "homepage": "https://www.magepsycho.com",
+      "role": "Maintainer"
     }
   ],
   "license": [
@@ -20,5 +22,7 @@
     "psr-4": {
       "MagePsycho\\CustomShipping\\": ""
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
