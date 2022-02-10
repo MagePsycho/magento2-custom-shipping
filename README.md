@@ -20,7 +20,7 @@ Overview
 [Magento 2 Custom Shipping](https://www.magepsycho.com/magento-2-custom-shipping.html) is a sample for Shipping module in Magento 2.   
 You can use this module as a base for developing any custom shipping modules.
 
-Installation
+🛠️ Installation
 -------------
 **Using Composer**
 
@@ -48,7 +48,7 @@ php bin/magento setup:upgrade
 
 [Click here to read more on module packaging, installation & activation in Magento 2](http://www.blog.magepsycho.com/install-magento-2-module-from-github-or-bitbucket-repository-using-composer/)
 
-Screenshots
+🚀 Screenshots
 -----------
 ![Backend Settings](http://www.blog.magepsycho.com/wp-content/uploads/2015/12/magento2-custom-shipping.png "Backend Settings")
 1. Screentshot - Backend Settings
