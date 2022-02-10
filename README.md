@@ -7,8 +7,8 @@
 
 <div align="center">
 
-[![Packagist Version](https://img.shields.io/github/v/tag/MagePsycho/magento2-custom-shipping?sort=semver&label=packagist&style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/magepsycho/magento2-custom-shipping.svg?style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping/stats)
+[![Packagist Version](https://img.shields.io/github/v/tag/MagePsycho/magento2-custom-shipping?logo=packagist&sort=semver&label=packagist&style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/magepsycho/magento2-custom-shipping.svg?logo=composer&style=for-the-badge)](https://packagist.org/packages/magepsycho/magento2-custom-shipping/stats)
 ![Supported Magento Versions](https://img.shields.io/badge/magento-%202.2_|2.3_|_2.4-brightgreen.svg?logo=magento&longCache=true&style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-green?color=%23234&style=for-the-badge)
 
@@ -59,17 +59,19 @@ Screenshots
 ![Checkout Steps 2 - Summary](http://www.blog.magepsycho.com/wp-content/uploads/2015/11/magento2-custom-shipping-checkout-summary.png "Checkout Steps 2 - Summary")
 3. Checkout Steps 2 - Summary
 
-## Authors
+## Contributors
 
 - Raj KB [Maintainer] [![Twitter Follow](https://img.shields.io/twitter/follow/rajkbnp.svg?style=social)](https://twitter.com/rajkbnp)
-- [Daniel](https://github.com/dh1984) [Contributor]
-- `{{This could be YOU}}` (see "Contribution" section)
+
+
+![Your Repository's Stats](https://contrib.rocks/image?repo=MagePsycho/magento2-custom-shipping)
+
+## To Contribute
+Any contribution to the development of `Magento 2 Custom Shipping` is highly welcome.  
+The best possibility to provide any code is to open a [pull request on GitHub](https://github.com/MagePsycho/magento2-custom-shipping/pulls).
+
 
 ## Need Support?
 If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/MagePsycho/magento2-custom-shipping/issues).
 
 Please [visit our store](https://www.magepsycho.com/extensions/magento-2.html) for more FREE / paid extensions OR [contact us](https://magepsycho.com/contact) for customization / development services.
-
-## Contribution
-Any contribution to the development of `Magento 2 Custom Shipping` is highly welcome.  
-The best possibility to provide any code is to open a [pull request on GitHub](https://github.com/MagePsycho/magento2-custom-shipping/pulls).
