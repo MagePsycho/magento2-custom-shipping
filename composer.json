@@ -21,7 +21,7 @@
       "src/registration.php"
     ],
     "psr-4": {
-      "MagePsycho\\CustomShipping\\": ""
+      "MagePsycho\\CustomShipping\\": "src/"
     }
   },
   "minimum-stability": "dev",
